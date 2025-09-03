@@ -12,7 +12,7 @@ import HashLoader from "react-spinners/HashLoader";
 
 function Layout()
 {
-    const contractAddress = "0x34e8dF30687501331F5331201A43790B7B40e84F";
+    const contractAddress = "0x3DeaB7bFd7a59bd5F6A34C55537B98F7366f4630";
 
     const [isSignInOpen, setIsSignInOpen] = useContext(context).signIn
     const [NFTContract,setNFTContract] = useContext(context).contract;
@@ -31,14 +31,14 @@ function Layout()
         async function checkNetwork() {
         if (window.ethereum) {
             const chainId = await window.ethereum.request({ method: "eth_chainId" });
-            setIsCorrectNetwork(chainId === "0x13882");
+            setIsCorrectNetwork(chainId === "0xaa36a7");
         }
         }
 
         checkNetwork();
 
         window.ethereum.on("chainChanged", (newChainId) => {
-        setIsCorrectNetwork(newChainId === "0x13882");
+        setIsCorrectNetwork(newChainId === "0xaa36a7");
         },[]);
     }, []);
 

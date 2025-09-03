@@ -34,7 +34,7 @@ export async function extractData( tokens )
 
 const Home = () => {
 
-    const contractAddress = "0x0C82ABb80e811dFA438E76a7A1A519F5f84f12DA";
+    const contractAddress = "0x3DeaB7bFd7a59bd5F6A34C55537B98F7366f4630";
 
     const [isSignInOpen, setIsSignInOpen] = useContext(context).signIn
     const [NFTContract,setNFTContract] = useContext(context).contract;
@@ -77,8 +77,8 @@ const Home = () => {
             
       <Popup isOpen={true} className="container">
         <br />
-        <h2>Switch to the Polygon Mumbai Network</h2>
-        <p>Please switch to the Polygon Mumbai network to use this app.</p>
+        <h2>Switch to the Ethereum Sepolia Network</h2>
+        <p>Please switch to the Ethereum Sepolia network to use this app.</p>
       </Popup>
     );
   }
