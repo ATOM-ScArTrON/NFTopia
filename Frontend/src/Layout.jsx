@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import Button from './Components/Button';
 import Popup from './Components/Popup';
 import context from "./Context/context"
-import { BrowserProvider, Contract } from "ethers";
+import { BrowserProvider, Contract, parseUnits } from "ethers";
 import ButtonGradient from './assets/svg/ButtonGradient';
 import { curve } from './assets';
 import contractABI from "./contractABI.json"
