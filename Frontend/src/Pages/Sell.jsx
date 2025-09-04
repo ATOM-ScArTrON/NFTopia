@@ -2,7 +2,6 @@ import { React, useState, useContext, useRef } from 'react'
 import FormData from 'form-data';
 import axios from "axios"
 import context from '../Context/context';
-import { ethers } from 'ethers'
 import { plus } from '../assets';
 import Button from '../Components/Button';
 import HashLoader from "react-spinners/HashLoader";
@@ -30,6 +29,11 @@ const Sell = () => {
             console.log("Contract is null");
             return;
         }
+
+        console.log(NFTContract);
+        console.log("NFTContract.runner:", NFTContract.runner);
+        console.log("NFTContract.runner?.getAddress:", NFTContract.runner?.getAddress);
+
         let signerAddress = NFTContract.runner?.getAddress ? await NFTContract.runner.getAddress() : null;
         if (!signerAddress) {
             console.log("Signer address is null");
@@ -87,7 +91,7 @@ const Sell = () => {
                         'Authorization': "Bearer " + PINATA_JWT,
                     }
                 });
-                console.log(await NFTContract.AddNFTs(res.data.IpfsHash, { gasLimit: ethers.BigNumber.from("4000000"), gasPrice: ethers.utils.parseUnits("40", "gwei") }));
+                console.log(await NFTContract.AddNFTs(res.data.IpfsHash, { gasLimit: 4000000n, gasPrice: parseUnits("40", "gwei") }));
 
             }
             catch (error) {
@@ -126,7 +130,7 @@ const Sell = () => {
 
                 <img hidden className='px-4 py-4 place-self-center'
                     src={file} height={300} width={300} />
-                <Button onClick={submitNFT} >
+                <Button onClick={submitNFT} disabled={!NFTContract || !NFTContract.runner || typeof NFTContract.runner.getAddress !== "function"}>
                     {!isUploading ? "Submit" :
                         <HashLoader
                             loading={isUploading}

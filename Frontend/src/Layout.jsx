@@ -53,6 +53,9 @@ function Layout() {
                 const provider = new BrowserProvider(window.ethereum);
                 const signer = provider.getSigner(account);
                 setNFTContract(new Contract(contractAddress, contractABI.abi, signer));
+                console.log("Setting NFTContract with account:", account);
+                console.log("signer is promise?", signer instanceof Promise, signer);
+
             }
         }
         initNFTContract();
