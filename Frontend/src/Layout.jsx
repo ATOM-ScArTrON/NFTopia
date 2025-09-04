@@ -10,6 +10,8 @@ import { curve } from './assets';
 import contractABI from "./contractABI.json"
 import HashLoader from "react-spinners/HashLoader";
 
+console.log("BrowserProvider typeof:", typeof BrowserProvider, BrowserProvider);
+
 function Layout() {
     const contractAddress = "0x3DeaB7bFd7a59bd5F6A34C55537B98F7366f4630";
 

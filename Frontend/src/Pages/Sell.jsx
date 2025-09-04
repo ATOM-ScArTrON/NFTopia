@@ -2,6 +2,7 @@ import { React, useState, useContext, useRef } from 'react'
 import FormData from 'form-data';
 import axios from "axios"
 import context from '../Context/context';
+import { parseUnits } from 'ethers';
 import { plus } from '../assets';
 import Button from '../Components/Button';
 import HashLoader from "react-spinners/HashLoader";
