@@ -82,7 +82,7 @@ function Layout() {
     async function addVote(collectionData) {
         try {
             setIsVoteUploading(true);
-            await NFTContract.AddVote(collectionData.collectionId, collectionData.tokenId, username, { gasLimit: ethers.BigNumber.from("400000"), gasPrice: ethers.utils.parseUnits("40", "gwei") });
+            await NFTContract.AddVote(collectionData.collectionId, collectionData.tokenId, username, { gasLimit: 400000n, gasPrice: parseUnits("40", "gwei") });
         }
         catch (error) {
             console.log(error);
